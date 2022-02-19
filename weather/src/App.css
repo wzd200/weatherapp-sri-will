@@ -37,6 +37,32 @@
   }
 } */
 
+.container {
+  /* border: 1px solid red; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/*************APPLICATION-TITLE*************/
+.application-title {
+  /* border: 1px solid purple; */
+  text-align: center;
+}
+
+/*************APPLICATION*************/
+.application-forecast {
+  /* border: 1px solid blue; */
+  text-align: center;
+  align-items: center;
+}
+
+/*************ERRORMESSAGE*************/
 .Small {
   color: red;
+}
+
+/*************CARD*************/
+.card {
+  border-radius: 20px;
 }

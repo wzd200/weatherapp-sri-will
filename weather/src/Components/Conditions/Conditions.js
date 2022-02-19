@@ -12,9 +12,9 @@ const Conditions = (props) => {
             {props.error && <StyledError>Please enter a valid city.</StyledError>}
             {props.loading && <div>Loading...</div>}
             {props.responseObj.cod === 200 ?
-                <div>
-                    <p><strong>{props.responseObj.name}</strong></p>
-                    <p>It is currently {Math.round(props.responseObj.main.temp)} degrees out with {props.responseObj.weather[0].description}.</p>
+                <div className='card'>
+                    <h3 className='card-title'><strong>{props.responseObj.name}</strong></h3>
+                    <p className='card-text'>It is currently {Math.round(props.responseObj.main.temp)} degrees out with {props.responseObj.weather[0].description}.</p>
                 </div>
                 : null
             }

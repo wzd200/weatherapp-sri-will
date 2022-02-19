@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import Conditions from '../Components/Conditions/Conditions';
 
 const Forecast = () => {
@@ -42,43 +43,50 @@ const Forecast = () => {
     }
 
     return (
-       <div>
-           <h2>Find Current Weather Conditions</h2>
-           <form onSubmit={getForecast}>
-               <input
-                    type="text"
-                    placeholder="Enter City"
-                    maxLength="50"
-                    value={city}
-                    onChange={(e) => setCity(e.target.value)}
-                />
-                <label>
-                    <input
-                        type="radio"
-                        name="units"
-                        checked={unit === "imperial"}
-                        value="imperial"
-                        onChange={(e) => setUnit(e.target.value)}
-                    />
-                    Farenheit
-                </label>
-                <input
-                        type="radio"
-                        name="units"
-                        checked={unit === "metric"}
-                        value="metric"
-                        onChange={(e) => setUnit(e.target.value)}
-                    />
-                    Celcius
-                <label>
-                <button type="submit">Get Forecast</button>
-                </label>
-           </form>
-           <Conditions 
-                responseObj={responseObj}
-                error={error}
-                loading={loading}/>
-       </div>
+       <div id='forecast' className='container py-5'>
+            <h1 className='application-title'>Will and Sridevi's Weather App</h1>
+            <div className='application-forecast row py-5'>
+                <div className='col-lg-6 col-xs-12'>
+                    <form onSubmit={getForecast}>
+                        <input
+                                type="text"
+                                placeholder="Enter City"
+                                maxLength="50"
+                                value={city}
+                                onChange={(e) => setCity(e.target.value)}
+                            />
+                            <label>
+                                <input
+                                    type="radio"
+                                    name="units"
+                                    checked={unit === "imperial"}
+                                    value="imperial"
+                                    onChange={(e) => setUnit(e.target.value)}
+                                />
+                                Farenheit
+                            </label>
+                            <input
+                                    type="radio"
+                                    name="units"
+                                    checked={unit === "metric"}
+                                    value="metric"
+                                    onChange={(e) => setUnit(e.target.value)}
+                                />
+                                Celcius
+                            <label>
+                            </label>
+                            <br/>
+                            <button type="submit">Get Forecast</button>
+                    </form>
+                </div>
+                <div className='py-3 col-lg-6 col-xm-12'>
+                    <Conditions
+                            responseObj={responseObj}
+                            error={error}
+                            loading={loading}/>
+                </div>
+            </div>
+        </div>
     )
 }
 
