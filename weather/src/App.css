@@ -64,12 +64,18 @@
 
 /*************CARD*************/
 .card {
-  /* border-radius: 10rem; */
+  border-radius: 1.25rem !important;
   height: 20rem;
   width: 16rem;
   box-shadow: 0 0.25rem 0.5rem 0 rgba(0, 0, 0, 0.2)
 }
 
 .card-img-top {
-  height: 3rem;
+  border-radius: 1.25rem 1.25rem 0 0 !important;
+  height: 11rem;
+}
+
+.sky-type {
+  border-left: 0.0625rem solid gray;
+  text-transform: capitalize;
 }
