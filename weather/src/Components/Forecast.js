@@ -43,9 +43,45 @@ const Forecast = () => {
     }
 
     return (
-       <div id='forecast' className='container py-5'>
-            <h1 className='application-title'>Will and Sridevi's Weather App</h1>
-            <p>Type in a city of your choice, select your temperature units, and get your weather update!</p>
+       <div id='forecast' className='container'>
+            <div className='circle'>
+                <h1 className='application-title'>weather<br/><span className='drop'>drop</span></h1>
+            </div>
+            <div className='circle directions-circle'>
+                <div className='inputs'>
+                    <form onSubmit={getForecast}>
+                        <input
+                            type="text"
+                            placeholder="Enter City"
+                            maxLength="50"
+                            value={city}
+                            onChange={(e) => setCity(e.target.value)}
+                        />
+                        <label>
+                            <input
+                                type="radio"
+                                name="units"
+                                checked={unit === "imperial"}
+                                value="imperial"
+                                onChange={(e) => setUnit(e.target.value)}
+                            />
+                            Farenheit
+                        </label>
+                        <label>
+                            <input
+                                    type="radio"
+                                    name="units"
+                                    checked={unit === "metric"}
+                                    value="metric"
+                                    onChange={(e) => setUnit(e.target.value)}
+                            />
+                            Celcius
+                        </label>
+                        <br/>
+                        <button type="submit">Get Forecast</button>
+                    </form>
+                </div>
+            </div>
             <div className='application-forecast row py-5'>
                 <div className='col-lg-6 col-xs-12'>
                     <form onSubmit={getForecast}>

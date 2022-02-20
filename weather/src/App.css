@@ -38,7 +38,9 @@
 } */
 
 :root {
+  --primary-light-blue: #00d5ff;
   --primary-blue: #03adfc;
+  --primary-dark-blue: #006aff;
   --primary-white: #ffffff;
   --primary-red: red;
   --primary-gray: gray;
@@ -52,10 +54,40 @@
   justify-content: center;
 }
 
+/*************CIRCLE*************/
+.circle {
+  display: flex;
+  /* position: relative; */
+  background-color: var(--primary-light-blue);
+  height: 17rem;
+  width: 26rem;
+  border-bottom-left-radius: 25rem;
+  border-bottom-right-radius: 25rem;
+  justify-content: center;
+  align-items: center;
+  margin-left: -2rem;
+  margin-top: -1rem;
+  z-index: 2;
+  /* border: 1px solid red; */
+}
+
+.directions-circle {
+  height: 30rem;
+  background-color: var(--primary-blue);
+  margin-top: -15rem;
+  z-index: 1;
+}
+
 /*************APPLICATION-TITLE*************/
 .application-title {
   /* border: 1px solid purple; */
   text-align: center;
+  color: var(--primary-white);
+  font-size: 6rem;
+}
+
+.drop {
+  color: var(--primary-dark-blue);
 }
 
 /*************APPLICATION*************/
@@ -63,6 +95,11 @@
   /* border: 1px solid blue; */
   text-align: center;
   align-items: center;
+}
+
+/*************INPUTS*************/
+.inputs {
+  margin-top: 9rem;
 }
 
 /*************ERRORMESSAGE*************/
