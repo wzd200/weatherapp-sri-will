@@ -45,7 +45,7 @@ const Forecast = () => {
     return (
        <div id='forecast' className='container py-5'>
             <h1 className='application-title'>Will and Sridevi's Weather App</h1>
-            <h2>Type in a city of your choice, select your temperature units, and get your weather update!</h2>
+            <p>Type in a city of your choice, select your temperature units, and get your weather update!</p>
             <div className='application-forecast row py-5'>
                 <div className='col-lg-6 col-xs-12'>
                     <form onSubmit={getForecast}>
@@ -84,7 +84,8 @@ const Forecast = () => {
                     <Conditions
                             responseObj={responseObj}
                             error={error}
-                            loading={loading}/>
+                            loading={loading}
+                            unit={unit}/>
                 </div>
             </div>
         </div>

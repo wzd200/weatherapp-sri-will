@@ -53,7 +53,14 @@ const Conditions = (props) => {
                     <h3 className='card-title py-3'><strong>{props.responseObj.name}</strong></h3>
                     <div className='card-info row'>
                         <div className='degrees col-6'>
-                            <h4 className='card-text'>{Math.round(props.responseObj.main.temp)}°</h4>
+                            <h4 className='card-text'>{Math.round(props.responseObj.main.temp)}°
+                            {props.unit === 'imperial' ?
+                                ' F' : null
+                            }
+                            {props.unit === 'metric' ?
+                                ' C' : null
+                            }
+                            </h4>
                         </div>
                         <div className='sky-type col-6'>
                             <p className='card-text'>{props.responseObj.weather[0].description}</p>

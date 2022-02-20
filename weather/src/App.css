@@ -37,6 +37,14 @@
   }
 } */
 
+:root {
+  --primary-blue: #03adfc;
+  --primary-white: #ffffff;
+  --primary-red: red;
+  --primary-gray: gray;
+  --primary-black: rgba(0, 0, 0, 0.2);
+}
+
 .container {
   /* border: 1px solid red; */
   display: flex;
@@ -59,7 +67,7 @@
 
 /*************ERRORMESSAGE*************/
 .Small {
-  color: red;
+  color: var(--primary-red);
 }
 
 /*************CARD*************/
@@ -72,7 +80,7 @@
   border-radius: 1.25rem !important;
   height: 20rem;
   width: 16rem;
-  box-shadow: 0 0.25rem 0.5rem 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0.25rem 0.5rem 0 var(--primary-black);
 }
 
 .degrees {
@@ -84,7 +92,7 @@
 
 .sky-type {
   display: flex;
-  border-left: 0.0625rem solid gray;
+  border-left: 0.0625rem solid var(--primary-gray);
   text-transform: capitalize;
   /* border: 1px solid blue; */
   align-items: center;
