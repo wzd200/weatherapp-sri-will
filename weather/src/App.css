@@ -63,19 +63,31 @@
 }
 
 /*************CARD*************/
-.card {
-  border-radius: 1.25rem !important;
-  height: 20rem;
-  width: 16rem;
-  box-shadow: 0 0.25rem 0.5rem 0 rgba(0, 0, 0, 0.2)
-}
-
 .card-img-top {
   border-radius: 1.25rem 1.25rem 0 0 !important;
   height: 11rem;
 }
 
+.card {
+  border-radius: 1.25rem !important;
+  height: 20rem;
+  width: 16rem;
+  box-shadow: 0 0.25rem 0.5rem 0 rgba(0, 0, 0, 0.2);
+}
+
+.degrees {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* border: 1px solid green; */
+}
+
 .sky-type {
+  display: flex;
   border-left: 0.0625rem solid gray;
   text-transform: capitalize;
+  /* border: 1px solid blue; */
+  align-items: center;
+  justify-content: center;
+  width: 7rem !important;
 }
