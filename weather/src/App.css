@@ -66,12 +66,8 @@
   justify-content: center;
   align-items: center;
   margin-left: -2rem;
-  /* margin-top: -19rem; start position */
   margin-top: -1rem;
   z-index: 2;
-  /* transform: translateY(100%);
-  transition: 2s ease-in-out; */
-  /* border: 1px solid red; */
   animation: 2s ease-in-out 0s 1 slideInFromTop;
 }
 
@@ -79,9 +75,6 @@
   height: 30rem;
   background-color: var(--primary-blue);
   margin-top: -14rem;
-  /* margin-top: -26rem; */
-  /* transform: translateY(100%);
-  transition: 2s ease-in-out; */
   z-index: 1;
 }
 
@@ -113,7 +106,14 @@
 
 /*************INPUTS*************/
 .inputs {
+  display: flex;
   margin-top: 9rem;
+  justify-content: center;
+}
+
+.btn {
+  margin-top: 1rem;
+  margin-left: 2.5rem;
 }
 
 /*************ERRORMESSAGE*************/
@@ -132,6 +132,7 @@
   height: 20rem;
   width: 16rem;
   box-shadow: 0 0.25rem 0.5rem 0 var(--primary-black);
+  text-align: center;
 }
 
 .degrees {

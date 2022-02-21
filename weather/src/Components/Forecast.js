@@ -51,6 +51,7 @@ const Forecast = () => {
                 <div className='inputs'>
                     <form onSubmit={getForecast}>
                         <input
+                            className='form-control'
                             type="text"
                             placeholder="Enter City"
                             maxLength="50"
@@ -78,52 +79,15 @@ const Forecast = () => {
                             Celcius
                         </label>
                         <br/>
-                        <button type="submit">Get Forecast</button>
+                        <button className='btn btn-primary' type="submit">Get Forecast</button>
                     </form>
                 </div>
             </div>
-            <div className='application-forecast row py-5'>
-                <div className='col-lg-6 col-xs-12'>
-                    <form onSubmit={getForecast}>
-                        <input
-                                type="text"
-                                placeholder="Enter City"
-                                maxLength="50"
-                                value={city}
-                                onChange={(e) => setCity(e.target.value)}
-                            />
-                            <label>
-                                <input
-                                    type="radio"
-                                    name="units"
-                                    checked={unit === "imperial"}
-                                    value="imperial"
-                                    onChange={(e) => setUnit(e.target.value)}
-                                />
-                                Farenheit
-                            </label>
-                            <input
-                                    type="radio"
-                                    name="units"
-                                    checked={unit === "metric"}
-                                    value="metric"
-                                    onChange={(e) => setUnit(e.target.value)}
-                                />
-                                Celcius
-                            <label>
-                            </label>
-                            <br/>
-                            <button type="submit">Get Forecast</button>
-                    </form>
-                </div>
-                <div className='py-3 col-lg-6 col-xm-12'>
-                    <Conditions
-                            responseObj={responseObj}
-                            error={error}
-                            loading={loading}
-                            unit={unit}/>
-                </div>
-            </div>
+            <Conditions
+                    responseObj={responseObj}
+                    error={error}
+                    loading={loading}
+                    unit={unit}/>
         </div>
     )
 }
