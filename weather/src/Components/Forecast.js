@@ -43,51 +43,70 @@ const Forecast = () => {
     }
 
     return (
-       <div id='forecast' className='container'>
-            <div className='circle'>
-                <h1 className='application-title'>weather<br/><span className='drop'>drop</span></h1>
-            </div>
-            <div className='circle directions-circle'>
-                <div className='inputs'>
-                    <form onSubmit={getForecast}>
-                        <input
-                            className='form-control'
-                            type="text"
-                            placeholder="Enter City"
-                            maxLength="50"
-                            value={city}
-                            onChange={(e) => setCity(e.target.value)}
-                        />
-                        <label>
+       <div id='forecast' className='container-fluid'>
+           <div className='row application'>
+                <div className='circle title-circle'>
+                    <h1 className='application-title'>weather<br/><span className='drop'>drop</span></h1>
+                </div>
+                <div className='circle directions-circle'>
+                    <div className='inputs'>
+                        <form onSubmit={getForecast}>
                             <input
-                                type="radio"
-                                name="units"
-                                checked={unit === "imperial"}
-                                value="imperial"
-                                onChange={(e) => setUnit(e.target.value)}
+                                className='form-control'
+                                type="text"
+                                placeholder="Enter City"
+                                maxLength="50"
+                                value={city}
+                                onChange={(e) => setCity(e.target.value)}
                             />
-                            Farenheit
-                        </label>
-                        <label>
-                            <input
+                            <label>
+                                <input
                                     type="radio"
                                     name="units"
-                                    checked={unit === "metric"}
-                                    value="metric"
+                                    checked={unit === "imperial"}
+                                    value="imperial"
                                     onChange={(e) => setUnit(e.target.value)}
-                            />
-                            Celcius
-                        </label>
+                                />
+                                Farenheit
+                            </label>
+                            <label>
+                                <input
+                                        type="radio"
+                                        name="units"
+                                        checked={unit === "metric"}
+                                        value="metric"
+                                        onChange={(e) => setUnit(e.target.value)}
+                                />
+                                Celcius
+                            </label>
+                            <br/>
+                            <button className='btn btn-primary' type="submit">Get Forecast</button>
+                        </form>
+                    </div>
+                </div>
+                <div className='card-filler'>
+                </div>
+                <div className='circle card-circle'>
+                    <div className='card-container'>
+                        <Conditions
+                                responseObj={responseObj}
+                                error={error}
+                                loading={loading}
+                                unit={unit}/>
+                    </div>
+                </div>
+                <div>
+                    <h2 className='credits'>
+                        Lead Designer/Programmer:
                         <br/>
-                        <button className='btn btn-primary' type="submit">Get Forecast</button>
-                    </form>
+                        William Dye
+                        <br/>
+                        <br/>
+                        Programmer: 
+                        <br/>Sridevi Chandrupatla
+                    </h2>
                 </div>
             </div>
-            <Conditions
-                    responseObj={responseObj}
-                    error={error}
-                    loading={loading}
-                    unit={unit}/>
         </div>
     )
 }
